@@ -1,4 +1,4 @@
-import User from '../model/userModels/user.js';
+import User from '../model/user.js';
 import { v4 as uuidv4 } from "uuid";
 
 class UserService {
@@ -27,13 +27,13 @@ class UserService {
     return await User.findOne({userId: id});
   }
 
-  /*async updateUser(id, data) {
+  async updateUser(id, data) {
     return await User.findByIdAndUpdate(id, data, { new: true });
   }
 
   async deleteUser(id) {
     return await User.findByIdAndDelete(id);
-  }*/
+  }
 }
 
 export default new UserService();

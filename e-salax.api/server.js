@@ -5,6 +5,7 @@ dotenv.config();
 import express from 'express';
 import mongoose from "mongoose";
 import userRoutes from "./routes/user.routes.js";
+import courtRoutes from "./routes/court.routes.js";
 import dbConfig from './config/database.config.js';
 
 const app = express();
@@ -22,6 +23,7 @@ mongoose
   });
 
 app.use("/api/users", userRoutes);
+app.use("/api/courts", courtRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);

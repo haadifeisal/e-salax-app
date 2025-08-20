@@ -3,11 +3,12 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   userId: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   admin: {
     type: Boolean,
-    required: true,
+    default: false,
   },
   name: {
     type: String,
@@ -27,7 +28,7 @@ const userSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    required: true,
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
@@ -36,4 +37,5 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema, "user");
+
 export default User;
